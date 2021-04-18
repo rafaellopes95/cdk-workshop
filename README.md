@@ -7,17 +7,17 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
 ## Useful commands
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+- `npm run build` compile typescript to js
+- `npm run watch` watch for changes and compile
+- `npm run test` perform the jest unit tests
+- `cdk deploy` deploy this stack to your default AWS account/region
+- `cdk diff` compare deployed stack with current state
+- `cdk synth` emits the synthesized CloudFormation template
 
 ## CDK commands
 
- * `cdk diff` Shows additions or deletion os resources when changing the stack code.
- * `cdk synth` Synthetizes the app to the resulting CloudFormation template.
- * `cdk deploy` Deploys the app into the configured account - (also supports a profiles for role based access).
- * `cdk deploy` Deletes the app from the configured account.
-
+- `cdk bootstrap` It creates de CdkToolkit stack in the configured account to allow Assets usage during deploy.
+- `cdk diff` Shows additions or deletion os resources when changing the stack code.
+- `cdk synth` Synthetizes the app to the resulting CloudFormation template.
+- `cdk deploy` Deploys the app into the configured account - (also supports a profiles for role based access).
+- `cdk destroy` Deletes the app from the configured account.
