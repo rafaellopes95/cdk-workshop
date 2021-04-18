@@ -1,18 +1,18 @@
-import * as sns from '@aws-cdk/aws-sns';
-import * as subs from '@aws-cdk/aws-sns-subscriptions';
-import * as sqs from '@aws-cdk/aws-sqs';
-import * as cdk from '@aws-cdk/core';
+import { Topic } from "@aws-cdk/aws-sns";
+import { SqsSubscription } from "@aws-cdk/aws-sns-subscriptions";
+import { Queue } from "@aws-cdk/aws-sqs";
+import { Stack, App, StackProps, Duration } from "@aws-cdk/core";
 
-export class CdkWorkshopStack extends cdk.Stack {
-  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+export class CdkWorkshopStack extends Stack {
+  constructor(scope: App, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const queue = new sqs.Queue(this, 'CdkWorkshopQueue', {
-      visibilityTimeout: cdk.Duration.seconds(300)
+    const queue = new Queue(this, 'CdkWorkshopQueue', {
+      visibilityTimeout: Duration.seconds(300)
     });
 
-    const topic = new sns.Topic(this, 'CdkWorkshopTopic');
+    const topic = new Topic(this, 'CdkWorkshopTopic');
 
-    topic.addSubscription(new subs.SqsSubscription(queue));
+    topic.addSubscription(new SqsSubscription(queue));
   }
 }
